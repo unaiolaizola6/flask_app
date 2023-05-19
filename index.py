@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route('/', methods=['POST'])
 def recibir_datos():
     nombre = request.form.get('nombre')
-    st.write(nombre)
+    print(nombre)
 
 if __name__ == '__main__':
     app.run()
