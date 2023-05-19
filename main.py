@@ -4,7 +4,7 @@ import streamlit as st
 app = Flask(__name__)
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('test.html')
 @app.route('/streamlit')
 def streamlit():
     st.set_page_config(page_title="My Streamlit App")
