@@ -7,6 +7,7 @@ app = Flask(__name__)
 def index():
     nombre = request.form.get('nombre')
     st.write(nombre)
+    return render_template('test.html')
 
 
 if __name__ == '__main__':
