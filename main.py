@@ -1,14 +1,13 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 import streamlit as st
 
 app = Flask(__name__)
-
-@app.route('/', methods=['POST'])
+@app.route('/')
 def index():
-    nombre = request.form.get('nombre')
-    st.write(nombre)
     return render_template('test.html')
-
-
+@app.route('/streamlit')
+def streamlit():
+    st.set_page_config(page_title="My Streamlit App")
+    st.write("Hello, world!")
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run()
