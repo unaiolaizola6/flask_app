@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route('/', methods=['POST'])
 def index():
     nombre = request.form.get('nombre')
-    return render_template('test.html')
+    return nombre
 
 
 if __name__ == '__main__':
