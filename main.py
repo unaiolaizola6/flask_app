@@ -8,7 +8,7 @@ def index():
     nombre = request.form.get('nombre')
     return nombre
 
-@app.route('/')
+@app.route('/streamlit')
 def streamlit():
     st.set_page_config(page_title="My Streamlit App")
     st.write("Hello, world!")
