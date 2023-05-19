@@ -5,12 +5,8 @@ app = Flask(__name__)
 
 @app.route('/', methods=['POST'])
 def index():
-    return render_template('test.html')
-
-@app.route('/streamlit')
-def streamlit():
-    st.set_page_config(page_title="My Streamlit App")
-    st.write("Hello, world!")
+    nombre = request.form.get('nombre')
+    return nombre
 
 if __name__ == '__main__':
     app.run()
