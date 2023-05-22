@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html>
-	<body>
-	   <h1>Welcome to my Flask and Streamlit app</h1>
-	</body>
+<head>
+    <title>Gráfico Altair</title>
+</head>
+<body>
+    <h1>Gráfico Altair</h1>
+    <div id="chartContainer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <script>
+        // Cargar y mostrar el gráfico en el contenedor
+        vegaEmbed('#chartContainer', 'chart.html');
+    </script>
+</body>
 </html>
+
