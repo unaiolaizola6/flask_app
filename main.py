@@ -7,10 +7,10 @@ app = Flask(__name__)
 
 @app.route('/', methods=['POST'])
 def index():
-    conn = mysql.connector.connect(host="dbnfg5oyozhtpn", user='umdcgwdtmlpas', password="L4_3b^3@1q[b", database="dbnfg5oyozhtpn") 
-    cursor = conn.cursor()
-    cursor.execute("select * from data")
-    datos = cursor.fetchall()
+    #conn = mysql.connector.connect(host="dbnfg5oyozhtpn", user='umdcgwdtmlpas', password="L4_3b^3@1q[b", database="dbnfg5oyozhtpn") 
+    #cursor = conn.cursor()
+    #cursor.execute("select * from data")
+    #datos = cursor.fetchall()
     alumno = request.form.get('alumno')
     data = pd.DataFrame({
         'x': [1, 2, 3, 4, 5],
