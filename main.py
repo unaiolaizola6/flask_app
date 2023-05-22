@@ -1,11 +1,16 @@
 from flask import Flask, render_template, request
 import altair as alt
 import pandas as pd
+import mysql.connector
 
 app = Flask(__name__)
 
 @app.route('/', methods=['POST'])
 def index():
+    conn = mysql.connector.connect(host="https://c47244.sgvps.net/phpmyadmin/index.php?route=/database/structure&server=1&db=dbnfg5oyozhtpn", user='umdcgwdtmlpas', password="L4_3b^3@1q[b", database="dbnfg5oyozhtpn") 
+    cursor = conn.cursor()
+    cursor.execute("select * from data")
+    datos = cursor.fetchall()
     alumno = request.form.get('alumno')
     data = pd.DataFrame({
         'x': [1, 2, 3, 4, 5],
