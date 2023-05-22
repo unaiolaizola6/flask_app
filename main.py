@@ -6,7 +6,6 @@ app = Flask(__name__)
 
 @app.route('/', methods=['POST'])
 def index():
-    alumno = request.form.get('alumno')
     data = pd.DataFrame({
         'x': [1, 2, 3, 4, 5],
         'y': [3, 5, 2, 4, 6]
