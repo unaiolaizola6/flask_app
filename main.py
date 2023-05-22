@@ -4,7 +4,7 @@ from vega_datasets import data
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['POST'])
 def index():
     # Cargar los datos del conjunto de datos de ejemplos de Altair
     cars = data.cars()
