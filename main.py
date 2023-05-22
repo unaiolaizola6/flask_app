@@ -1,27 +1,30 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 import altair as alt
-import numpy as np
-import pandas as pd
+from vega_datasets import data
 
 app = Flask(__name__)
 
-@app.route('/', methods=['POST'])
-def recibir_datos():
-    nombre = request.form.get('nombre')
-    # Procesar el valor recibido y mostrarlo en Streamlit
-    x = np.arange(100)
-    source = pd.DataFrame({
-      'x': x,
-      'f(x)': np.sin(x / 5)
-    })
+@app.route('/')
+def index():
+    # Cargar los datos
+    cars = data.cars()
 
-    alt.Chart(source).mark_line().encode(
-        x='x',
-        y='f(x)'
-    )
+    # Crear el gráfico con Altair
+    chart = alt.Chart(cars).mark_circle().encode(
+        x='Horsepower',
+        y='Miles_per_Gallon',
+        color='Origin'
+    ).interactive()
+
+    # Guardar el gráfico en un archivo HTML temporal
+    chart.save('chart.html')
+
+    # Renderizar la plantilla HTML con el gráfico
+    return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
+
 
 
 
