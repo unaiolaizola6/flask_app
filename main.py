@@ -6,13 +6,13 @@ app = Flask(__name__)
 
 @app.route('/', methods=['POST'])
 def index():
-    # Crear los datos
+    alumno = request.form.get('alumno')
     data = pd.DataFrame({
         'x': [1, 2, 3, 4, 5],
         'y': [3, 5, 2, 4, 6]
     })
 
-    # Crear el gráfico de líneas
+    
     chart = alt.Chart(data).mark_line().encode(
         x='x',
         y='y'
