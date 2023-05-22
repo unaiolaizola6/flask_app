@@ -18,7 +18,7 @@ def index():
         y='y'
     ).to_json()
 
-    return render_template('index.html', chart=chart)
+    return render_template('test.html', chart=chart)
 
 if __name__ == '__main__':
     app.run()
