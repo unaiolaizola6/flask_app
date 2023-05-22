@@ -17,7 +17,7 @@ def index():
     ).interactive()
 
     # Guardar el gráfico en un archivo HTML temporal
-    chart.save('chart.html')
+    chart.save('test.html')
 
     # Renderizar la plantilla HTML con el gráfico
     return render_template('index.html')
