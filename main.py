@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request
-import streamlit as st
+import altair as alt
+import numpy as np
+import pandas as pd
 
 app = Flask(__name__)
 
@@ -7,7 +9,16 @@ app = Flask(__name__)
 def recibir_datos():
     nombre = request.form.get('nombre')
     # Procesar el valor recibido y mostrarlo en Streamlit
-    st.write(f"El nombre recibido es: {nombre}")
+    x = np.arange(100)
+    source = pd.DataFrame({
+      'x': x,
+      'f(x)': np.sin(x / 5)
+    })
+
+    alt.Chart(source).mark_line().encode(
+        x='x',
+        y='f(x)'
+    )
 
 if __name__ == '__main__':
     app.run()
