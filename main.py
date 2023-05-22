@@ -17,10 +17,10 @@ def index():
     ).interactive()
 
     # Guardar el gráfico en un archivo HTML temporal
-    chart.save('test.html')
+    chart.save('chart.html')
 
     # Renderizar la plantilla HTML con el gráfico
-    return render_template('index.html')
+    return render_template('test.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
