@@ -20,7 +20,7 @@ def index():
     chart.save('chart.html')
 
     # Renderizar la plantilla HTML que contiene el gráfico
-    return render_template('index.html')
+    return render_template('test.html')
 
 if __name__ == '__main__':
     app.run()
