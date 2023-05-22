@@ -6,10 +6,6 @@ app = Flask(__name__)
 
 @app.route('/', methods=['POST'])
 def index():
-    conn = mysql.connector.connect(host="localhost", port="3306", user='admin2', password="a", database="prueba") 
-    cursor = conn.cursor()
-    cursor.execute("select * from data")
-    datos = cursor.fetchall()
     alumno = request.form.get('alumno')
     data = pd.DataFrame({
         'x': [1, 2, 3, 4, 5],
@@ -22,7 +18,7 @@ def index():
         y='y'
     ).to_json()
 
-    return render_template('test.html', chart=chart, alumno=alumno, datos=datos)
+    return render_template('test.html', chart=chart, alumno=alumno)
 
 if __name__ == '__main__':
     app.run()
