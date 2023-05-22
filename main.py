@@ -4,7 +4,7 @@ import pandas as pd
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['POST'])
 def index():
     # Crear los datos
     data = pd.DataFrame({
