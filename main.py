@@ -4,11 +4,10 @@ import streamlit as st
 app = Flask(__name__)
 
 @app.route('/', methods=['POST'])
-def index():
+def recibir_datos():
     nombre = request.form.get('nombre')
-    st.set_page_config(page_title="My Streamlit App")
-    st.write("Hello, world!")
-    return render_template('test.html')
+    # Procesar el valor recibido y mostrarlo en Streamlit
+    st.write(f"El nombre recibido es: {nombre}")
 
 if __name__ == '__main__':
     app.run()
