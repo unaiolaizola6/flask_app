@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['POST'])
 def index():
-    conn = mysql.connector.connect(host="https://c47244.sgvps.net/phpmyadmin/index.php?route=/database/structure&server=1&db=dbnfg5oyozhtpn", user='umdcgwdtmlpas', password="L4_3b^3@1q[b", database="dbnfg5oyozhtpn") 
+    conn = mysql.connector.connect(host="dbnfg5oyozhtpn", user='umdcgwdtmlpas', password="L4_3b^3@1q[b", database="dbnfg5oyozhtpn") 
     cursor = conn.cursor()
     cursor.execute("select * from data")
     datos = cursor.fetchall()
