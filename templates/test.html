@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Gráfico Altair con Flask</title>
+    <title>Gráfico de Líneas</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 </head>
 <body>
-    <h1>Gráfico Altair con Flask</h1>
-    <iframe src="{{ url_for('static', filename='chart.html') }}" width="800" height="600"></iframe>
+    <div id="chart"></div>
+    <script>
+        const chartSpec = {{ chart|safe }};
+        vegaEmbed('#chart', chartSpec);
+    </script>
 </body>
 </html>
 
