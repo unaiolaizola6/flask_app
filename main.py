@@ -12,6 +12,8 @@ def index():
     #cursor.execute("select * from data")
     #datos = cursor.fetchall()
     alumno = request.form.get('alumno')
+    nombre = request.form.get('nombre')
+    apellido = request.form.get('apellido')
     data = pd.DataFrame({
         'x': [1, 2, 3, 4, 5],
         'y': [3, 5, 2, 4, 6]
@@ -23,7 +25,7 @@ def index():
         y='y'
     ).to_json()
 
-    return render_template('test.html', chart=chart, alumno=alumno)
+    return render_template('test.html', chart=chart, alumno=alumno, nombre=nombre, apellido=apellido)
 
 if __name__ == '__main__':
     app.run()
