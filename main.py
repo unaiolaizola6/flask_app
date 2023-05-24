@@ -25,7 +25,7 @@ def index():
         y='y'
     ).to_json()
 
-    return render_template('test.html', chart=chart, alumno=alumno, nombre=nombre, apellido=apellido, datos=datos)
+    return render_template('test.html', chart=chart, alumno=alumno, nombre=nombre, apellido=apellido)
 
 if __name__ == '__main__':
     app.run()
