@@ -7,10 +7,10 @@ app = Flask(__name__)
 
 @app.route('/', methods=['POST'])
 def index():
-    #conn = mysql.connector.connect(host="dbnfg5oyozhtpn", user='umdcgwdtmlpas', password="L4_3b^3@1q[b", database="dbnfg5oyozhtpn") 
-    #cursor = conn.cursor()
-    #cursor.execute("select * from data")
-    #datos = cursor.fetchall()
+    conn = mysql.connector.connect(host="c47244.sgvps.net", user='umdcgwdtmlpas', password="L4_3b^3@1q[b", database="dbnfg5oyozhtpn") 
+    cursor = conn.cursor()
+    cursor.execute("select * from sentiments")
+    datos = cursor.fetchall()
     alumno = request.form.get('alumno')
     nombre = request.form.get('nombre')
     apellido = request.form.get('apellido')
@@ -25,7 +25,7 @@ def index():
         y='y'
     ).to_json()
 
-    return render_template('test.html', chart=chart, alumno=alumno, nombre=nombre, apellido=apellido)
+    return render_template('test.html', chart=chart, alumno=alumno, nombre=nombre, apellido=apellido, datos=datos)
 
 if __name__ == '__main__':
     app.run()
